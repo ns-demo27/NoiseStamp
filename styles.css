@@ -82,7 +82,7 @@ audio { display: block; width: 100%; height: 44px; }
 .method-flow p { font-size: 14px; line-height: 1.85; color: var(--muted); }
 
 /* Comparison controls and matching reference/output columns. */
-.listening-controls { border: 1px solid var(--line); border-radius: 6px; }
+.listening-controls { display: inline-block; max-width: 100%; border: 1px solid var(--line); border-radius: 6px; }
 .filter-bar { display: flex; align-items: end; gap: 24px; flex-wrap: wrap; padding: 16px 20px; }
 .select-field { display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted); min-width: 160px; }
 .select-field select { appearance: auto; border: 1px solid #bfcec4; border-radius: 3px; background: white; padding: 9px 34px 9px 12px; font-size: 14px; min-height: 44px; color: var(--forest); }

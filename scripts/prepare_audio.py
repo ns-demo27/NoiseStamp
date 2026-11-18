@@ -52,8 +52,10 @@ def build(source, destination):
                   "example": number, "transcript": transcripts.pop(),
                   "reference": {}, "watermarked": {}}
         for entry in entries:
+            if entry["长度类型"] != "full":
+                continue
             state = {"original": "reference", "watermarked": "watermarked"}[entry["水印状态"]]
-            length = {"full": "full", "1s": "excerpt"}[entry["长度类型"]]
+            length = "full"
             if length in record[state]:
                 raise ValueError(f"Duplicate audio in {sample_id}")
             original = source / entry["文件"]
@@ -70,15 +72,13 @@ def build(source, destination):
                 raise ValueError(f"Indexed duration mismatch: {sample_id}")
             if sample_rate != int(entry["采样率（Hz）"]) or channels != 1 or sample_width != 2:
                 raise ValueError(f"Unexpected audio format: {sample_id}")
-            if length == "excerpt" and abs(duration - 1) > 1 / sample_rate:
-                raise ValueError(f"Excerpt is not one second: {sample_id}")
             digest = hashlib.sha256(target.read_bytes()).hexdigest()
             if digest != hashlib.sha256(original.read_bytes()).hexdigest():
                 raise ValueError(f"Copy mismatch: {sample_id}")
             record[state][length] = {"src": relative.as_posix(), "duration": round(duration, 4),
                                       "sampleRate": sample_rate, "sha256": digest}
             exported.add(relative.as_posix())
-        expected = {"excerpt"} if group == "preview" else {"full", "excerpt"}
+        expected = {"full"}
         if any(set(record[state]) != expected for state in ("reference", "watermarked")):
             raise ValueError(f"Incomplete audio pair: {sample_id}")
         manifest[group].append(record)
@@ -87,7 +87,7 @@ def build(source, destination):
         manifest[group].sort(key=lambda sample: (MODELS.index(sample["model"]), METHODS.index(sample["method"]), sample["language"], sample["example"]))
     assert len(manifest["listening"]) == 14
     assert len(manifest["preview"]) == 0
-    assert len(exported) == 56
+    assert len(exported) == 28
     manifest["counts"] = {"listeningPairs": 14, "previewPairs": 0, "audioFiles": len(exported)}
     output = destination / "data/samples.json"
     output.parent.mkdir(parents=True, exist_ok=True)

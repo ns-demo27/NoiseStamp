@@ -29,12 +29,6 @@
           "duration": 4.3093,
           "sampleRate": 24000,
           "sha256": "90eb67109308b564cda94ccf77afe4a2b130ea979f4b1b4427f594ca082e36e7"
-        },
-        "excerpt": {
-          "src": "assets/audio/listening/f5-tts/noisestamp/en/01/reference-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "d260b57359c32091ab67ac1dd954eda67261785d8618109ed82eddbb6e359571"
         }
       },
       "watermarked": {
@@ -43,12 +37,6 @@
           "duration": 4.3093,
           "sampleRate": 24000,
           "sha256": "4052cc0f45a6b4c578b70748b168a20b1e84e420b8647ac19ef5a3ca3deb247a"
-        },
-        "excerpt": {
-          "src": "assets/audio/listening/f5-tts/noisestamp/en/01/watermarked-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "4f8911e362717021b42c91ff6dfb1b543daeec78bd0f78ce673107da17d6d31b"
         }
       }
     },
@@ -65,12 +53,6 @@
           "duration": 5.9947,
           "sampleRate": 24000,
           "sha256": "2a2994ee31e82865684c9bf970270618024029f392d24c0755adcb1c1863d3eb"
-        },
-        "excerpt": {
-          "src": "assets/audio/listening/f5-tts/noisestamp/zh/01/reference-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "44e1675c805064316349ae42f3cfe854fec0b151c018520aa5dbaba0847dd3d3"
         }
       },
       "watermarked": {
@@ -79,12 +61,6 @@
           "duration": 5.9947,
           "sampleRate": 24000,
           "sha256": "e01da29464de609eefe1c4f1eb2f66642491dc63d2051a6181bd5653c838753a"
-        },
-        "excerpt": {
-          "src": "assets/audio/listening/f5-tts/noisestamp/zh/01/watermarked-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "81c34ec29b838fa5e83593ef66215cd08743df6f59f6831383ce68998fe41740"
         }
       }
     },
@@ -101,12 +77,6 @@
           "duration": 5.1897,
           "sampleRate": 24000,
           "sha256": "234b79d347bfa0eb1f5e5c850293f2003b922e71359eb0dcfded9b449d31d965"
-        },
-        "excerpt": {
-          "src": "assets/audio/listening/indextts2/noisestamp/en/01/reference-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "0d74a33b1a3eacafb2bffd9079c5dd7c5b73e2b394ad4708e18e271e067d3aff"
         }
       },
       "watermarked": {
@@ -115,12 +85,6 @@
           "duration": 5.1897,
           "sampleRate": 24000,
           "sha256": "99bdb136ae19aa3e8b30669b4f3aa21ca1e58270c9034ed41580b8a234e7d578"
-        },
-        "excerpt": {
-          "src": "assets/audio/listening/indextts2/noisestamp/en/01/watermarked-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "4a43dac4f86eaf611fc40283ff5ec72762f3b132c4ad84fc73f4680e5bebc981"
         }
       }
     },
@@ -137,12 +101,6 @@
           "duration": 5.863,
           "sampleRate": 24000,
           "sha256": "1d26eda57efd4850c0b04b698123d3b5dbaf171435339c6c5d6d093d454f214b"
-        },
-        "excerpt": {
-          "src": "assets/audio/listening/indextts2/noisestamp/zh/01/reference-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "eec81900e2c874c3c5e5168af52993fd5e25caa061f3819dd36c86f85e934926"
         }
       },
       "watermarked": {
@@ -151,12 +109,6 @@
           "duration": 5.863,
           "sampleRate": 24000,
           "sha256": "10d45f5fc5a31b60ba2d5081a57aa94ccb64273db31cd9ae70f11d94fec20331"
-        },
-        "excerpt": {
-          "src": "assets/audio/listening/indextts2/noisestamp/zh/01/watermarked-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "07be2e0b717789de199b3bafa21247184f98685ddf8f50cef74797e65f91bbf7"
         }
       }
     },
@@ -173,12 +125,6 @@
           "duration": 5.2013,
           "sampleRate": 24000,
           "sha256": "ee132bc0a7eccfae5ed22aea67b29ede9c3cab7a7c50b8ee4ae135dc162902c0"
-        },
-        "excerpt": {
-          "src": "assets/audio/listening/indextts2/audioseal-utt/en/01/reference-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "83ee3c0532c4ba682fff6dce7cfb7373b67f34d07bf5ce09531e250d6d8dc8cf"
         }
       },
       "watermarked": {
@@ -187,12 +133,6 @@
           "duration": 5.2013,
           "sampleRate": 24000,
           "sha256": "37f06b9f6f6f8790ef40516590c2a8eee2c6bdb324892ead6c6bee645d28d4b1"
-        },
-        "excerpt": {
-          "src": "assets/audio/listening/indextts2/audioseal-utt/en/01/watermarked-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "6af39259abb3e0fac56579c9fdbbc4acde7c4ce58ae6ef411c972bcc92992e92"
         }
       }
     },
@@ -209,12 +149,6 @@
           "duration": 4.586,
           "sampleRate": 24000,
           "sha256": "38a84bbbb257ac92b24e9d5d274d793af322a6a4cb19406e79989dcec677e52d"
-        },
-        "excerpt": {
-          "src": "assets/audio/listening/indextts2/audioseal-str/en/01/reference-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "06f8c99dc10eea8497260c037714553fbf4a5ae4e7ec1456694db108e1a95096"
         }
       },
       "watermarked": {
@@ -223,12 +157,6 @@
           "duration": 4.586,
           "sampleRate": 24000,
           "sha256": "c6f2575e51bbacf36be21d4354396bd0b702b7d09280bed14be2bfdb25ba7566"
-        },
-        "excerpt": {
-          "src": "assets/audio/listening/indextts2/audioseal-str/en/01/watermarked-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "9e54f9428596b7fae49ae12d4b4b42d92f71f3831b718bd45d2b4be62447c79a"
         }
       }
     },
@@ -245,12 +173,6 @@
           "duration": 5.3406,
           "sampleRate": 24000,
           "sha256": "262353165b50243715f0738d0da06e403f27e2e2dd59f2bc96825c171e6b9558"
-        },
-        "excerpt": {
-          "src": "assets/audio/listening/indextts2/wavmark/en/01/reference-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "8c35b78ba0cc3380dab84f0c1eb6f184879f04a5bb89c9d18362b7860aa6a0c2"
         }
       },
       "watermarked": {
@@ -259,12 +181,6 @@
           "duration": 5.3406,
           "sampleRate": 24000,
           "sha256": "c52af39a2bfefcbb5c41e8362992182a7b41c7d1659374d91704630d0356a10d"
-        },
-        "excerpt": {
-          "src": "assets/audio/listening/indextts2/wavmark/en/01/watermarked-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "77885835d76cf48abf90f6c9abd026111ff66253d9174eb7fa65fb5af219f44e"
         }
       }
     },
@@ -281,12 +197,6 @@
           "duration": 4.586,
           "sampleRate": 24000,
           "sha256": "27a49276fb825b5442f210f0f6cc725d99b37c4567e2b119b5c6be579595ade0"
-        },
-        "excerpt": {
-          "src": "assets/audio/listening/indextts2/perth/en/01/reference-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "056084d9d9cb37e5f55e875931f4edce0d4bfcfd4bb022a8714218adf4a4bea2"
         }
       },
       "watermarked": {
@@ -295,12 +205,6 @@
           "duration": 4.586,
           "sampleRate": 24000,
           "sha256": "675a9793131c0cad66e69d892ed5bad6d0e82e12197ca28a4ada1994b170514e"
-        },
-        "excerpt": {
-          "src": "assets/audio/listening/indextts2/perth/en/01/watermarked-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "757b95939b2286cdb47e0935334467ed1862708ec7cc107c267de06a8235e9bd"
         }
       }
     },
@@ -317,12 +221,6 @@
           "duration": 5.4102,
           "sampleRate": 24000,
           "sha256": "bc3915f520b2ee4cccff46e7fab03aa13434d7668d6e05e110cfaa9518b5f0f9"
-        },
-        "excerpt": {
-          "src": "assets/audio/listening/indextts2/voicemark/en/01/reference-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "6a61d3c786e583c414a069c0fc71382916de7788fcfd5d30682c830484da38cd"
         }
       },
       "watermarked": {
@@ -331,12 +229,6 @@
           "duration": 5.4103,
           "sampleRate": 24000,
           "sha256": "91259b868dab5b8e18b998513f7124325661117f06f5e0139de9178e4aacb14c"
-        },
-        "excerpt": {
-          "src": "assets/audio/listening/indextts2/voicemark/en/01/watermarked-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "26ed51d6af49ab24d44f5d598d589349759dad32852dbcd7711cfc65c45429e2"
         }
       }
     },
@@ -353,12 +245,6 @@
           "duration": 4.5511,
           "sampleRate": 24000,
           "sha256": "0372ef522a472ed75cc44fb3786db8098fd74e4487b0f3bbb01358c3c9fa81ce"
-        },
-        "excerpt": {
-          "src": "assets/audio/listening/indextts2/traceablespeech/en/01/reference-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "3e3b27514fe71ae0d5f60257ef98037044c60d76b56745f5d29a75a7475fe3b2"
         }
       },
       "watermarked": {
@@ -367,12 +253,6 @@
           "duration": 4.55,
           "sampleRate": 24000,
           "sha256": "1aee6863196c787b2bfedfda183d1769423ae63f72654254fc0bc043c68d09f7"
-        },
-        "excerpt": {
-          "src": "assets/audio/listening/indextts2/traceablespeech/en/01/watermarked-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "0866e3d181b0de2b716d7d54866b9957b0945f73576dea2cb41e2558f66a4df3"
         }
       }
     },
@@ -389,12 +269,6 @@
           "duration": 5.28,
           "sampleRate": 24000,
           "sha256": "feb9082030facb1cf777905488dacaf17ced14785f698c5be6881f7965160400"
-        },
-        "excerpt": {
-          "src": "assets/audio/listening/cosyvoice3/noisestamp/en/01/reference-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "6a2fad7bdf7a14f7b38150fe7d8f523b403fb8118fe03e936fdfe00765d77e87"
         }
       },
       "watermarked": {
@@ -403,12 +277,6 @@
           "duration": 5.28,
           "sampleRate": 24000,
           "sha256": "cbe6ad0f5d5c4de776f474105416cebbb43ccc0d7a21ef7bcde824f218ad61b1"
-        },
-        "excerpt": {
-          "src": "assets/audio/listening/cosyvoice3/noisestamp/en/01/watermarked-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "0e476ddef36a8600a778c89bb88a740363399b042e769bb8422c9c24b98b809a"
         }
       }
     },
@@ -425,12 +293,6 @@
           "duration": 5.52,
           "sampleRate": 24000,
           "sha256": "eabe56bd4791c3ff8e52c21fe767320568d489bfcd8bd4a4089da2ec1fceac1a"
-        },
-        "excerpt": {
-          "src": "assets/audio/listening/cosyvoice3/noisestamp/zh/02/reference-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "b065e15e4d2c7624217230c964d5b774b83f085d96726c025ba3079d487b6652"
         }
       },
       "watermarked": {
@@ -439,12 +301,6 @@
           "duration": 5.52,
           "sampleRate": 24000,
           "sha256": "dc0a1ad2fc6c7414117641626eb53a00a58d45de71c344311f964a32ecbec77c"
-        },
-        "excerpt": {
-          "src": "assets/audio/listening/cosyvoice3/noisestamp/zh/02/watermarked-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "5647e83e2386913e4f9900a55ed87d6086a48abb856c906a08748d4dd8f486c4"
         }
       }
     },
@@ -461,12 +317,6 @@
           "duration": 5.92,
           "sampleRate": 24000,
           "sha256": "234458d667d418cc104c661c7b508a406da96e4c29ec34d995ee5c06536c6693"
-        },
-        "excerpt": {
-          "src": "assets/audio/listening/voxcpm2/noisestamp/en/01/reference-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "0cfae9a123f7cbe7891c5ac1e265bdd77376d18d767d3b0b8f481cee48be125e"
         }
       },
       "watermarked": {
@@ -475,12 +325,6 @@
           "duration": 5.76,
           "sampleRate": 24000,
           "sha256": "5f5ceecca25d2572a6398e2df443ce405b63c68364bfb599b0d8aad597cc7414"
-        },
-        "excerpt": {
-          "src": "assets/audio/listening/voxcpm2/noisestamp/en/01/watermarked-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "0dab16aede684d1ce1e716a4f23c5638ea3fd268ffb44c9902677617bf85f991"
         }
       }
     },
@@ -497,12 +341,6 @@
           "duration": 5.44,
           "sampleRate": 24000,
           "sha256": "a22f6f2c892d42fafbf3c05eee24abf03e5e987afd65f0fa96f7a95d717ffb97"
-        },
-        "excerpt": {
-          "src": "assets/audio/listening/voxcpm2/noisestamp/zh/02/reference-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "3680792c89a219d837792011f26c9ae7b8cb795e06bc405277d6a96975460725"
         }
       },
       "watermarked": {
@@ -511,12 +349,6 @@
           "duration": 5.12,
           "sampleRate": 24000,
           "sha256": "aec3543455089f67e63ea1389f895a1dbb340b1f52014b473eb913dc361a0ef1"
-        },
-        "excerpt": {
-          "src": "assets/audio/listening/voxcpm2/noisestamp/zh/02/watermarked-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "3a85ecba8a6a58e090cf9426bd431c451ea53b6e7f4d59c825cbcfd77503b507"
         }
       }
     }
@@ -525,6 +357,6 @@
   "counts": {
     "listeningPairs": 14,
     "previewPairs": 0,
-    "audioFiles": 56
+    "audioFiles": 28
   }
 }

@@ -1,7 +1,7 @@
 "use strict";
 
 (() => {
-  const state = { language: "en", length: "full", baselineLength: "full" };
+  const state = { language: "en" };
   let data;
   const byId = (id) => document.getElementById(id);
   const make = (tag, className, text) => {
@@ -10,7 +10,7 @@
     if (text !== undefined) node.textContent = text;
     return node;
   };
-  const durationText = (seconds) => `${seconds.toFixed(seconds === 1 ? 0 : 2)} s`;
+  const durationText = (seconds) => `${seconds.toFixed(2)} s`;
 
   function audioCell(asset, label, context) {
     const cell = make("div", "audio-cell");
@@ -35,7 +35,7 @@
     return cell;
   }
 
-  function comparisonRow(sample, length, byModel) {
+  function comparisonRow(sample, byModel) {
     const isOurs = sample.method === "NoiseStamp";
     const row = make("article", `comparison-row${byModel ? " host-row" : isOurs ? " is-ours" : ""}`);
     row.dataset.sample = sample.id;
@@ -44,15 +44,15 @@
     if (!byModel && isOurs) title.append(make("span", "ours-label", "Ours"));
     const description = byModel ? "NoiseStamp / 32-bit payload" : sample.method === "Perth" ? "Presence-only watermark" : isOurs ? "32-bit payload" : "16-bit payload";
     name.append(title, make("p", "", description));
-    const context = `${sample.model}, ${sample.method}, ${sample.language === "en" ? "English" : "Chinese"}, ${length === "full" ? "full recording" : "one-second excerpt"}`;
+    const context = `${sample.model}, ${sample.method}, ${sample.language === "en" ? "English" : "Chinese"}`;
     const transcript = make("details", "transcript");
     transcript.append(make("summary", "", "Spoken text"));
     const text = make("p", "", sample.transcript);
     text.lang = sample.language === "zh" ? "zh-Hans" : "en";
     transcript.append(text);
     row.append(name,
-      audioCell(sample.reference[length], "Unwatermarked reference", context),
-      audioCell(sample.watermarked[length], isOurs ? "NoiseStamp output" : "Watermarked output", context),
+      audioCell(sample.reference.full, "Unwatermarked reference", context),
+      audioCell(sample.watermarked.full, isOurs ? "NoiseStamp output" : "Watermarked output", context),
       transcript);
     return row;
   }
@@ -62,12 +62,12 @@
     const fragment = document.createDocumentFragment();
     data.models.forEach((model) => {
       const sample = data.listening.find((item) => item.model === model && item.method === "NoiseStamp" && item.language === state.language);
-      if (!sample) throw new Error(`Missing curated sample for ${model}`);
-      fragment.append(comparisonRow(sample, state.length, true));
+      if (!sample) throw new Error(`Missing audio sample for ${model}`);
+      fragment.append(comparisonRow(sample, true));
     });
     target.replaceChildren(fragment);
     target.setAttribute("aria-busy", "false");
-    byId("selection-summary").textContent = `${state.language === "en" ? "English" : "Chinese"} speech across four TTS models. ${state.length === "full" ? "Full recordings." : "One-second excerpts."}`;
+    byId("selection-summary").textContent = `${state.language === "en" ? "English" : "Chinese"} speech across four TTS models.`;
   }
 
   function renderBaselines() {
@@ -76,14 +76,10 @@
     data.methods.forEach((method) => {
       const sample = data.listening.find((item) => item.model === "IndexTTS2" && item.language === "en" && item.method === method);
       if (!sample) throw new Error(`Missing baseline example for ${method}`);
-      fragment.append(comparisonRow(sample, state.baselineLength, false));
+      fragment.append(comparisonRow(sample, false));
     });
     target.replaceChildren(fragment);
     target.setAttribute("aria-busy", "false");
-  }
-
-  function stopAudio() {
-    document.querySelectorAll("audio").forEach((audio) => audio.pause());
   }
 
   document.addEventListener("play", (event) => {
@@ -95,21 +91,8 @@
 
   byId("language").addEventListener("change", (event) => {
     state.language = event.target.value;
-    stopAudio();
+    document.querySelectorAll("audio").forEach((audio) => audio.pause());
     if (data) renderModels();
-  });
-  byId("filters").addEventListener("change", (event) => {
-    if (event.target.name !== "length") return;
-    state.length = event.target.value;
-    stopAudio();
-    if (data) renderModels();
-  });
-  document.querySelectorAll('input[name="baseline-length"]').forEach((input) => {
-    input.addEventListener("change", (event) => {
-      state.baselineLength = event.target.value;
-      stopAudio();
-      if (data) renderBaselines();
-    });
   });
   byId("reload-button").addEventListener("click", () => window.location.reload());
 

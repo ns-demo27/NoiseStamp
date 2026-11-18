@@ -21,7 +21,7 @@ for method in data["methods"]:
 paths = set()
 for pair in data["listening"] + data["preview"]:
     assert pair["transcript"]
-    expected = {"excerpt"} if pair in data["preview"] else {"full", "excerpt"}
+    expected = {"full"}
     for state in ("reference", "watermarked"):
         assert set(pair[state]) == expected
         for length, asset in pair[state].items():
@@ -35,10 +35,8 @@ for pair in data["listening"] + data["preview"]:
                 assert audio.getsampwidth() == 2 and audio.getnchannels() == 1
                 assert audio.getframerate() == asset["sampleRate"]
                 assert abs(duration - asset["duration"]) < 0.0001
-                if length == "excerpt":
-                    assert abs(duration - 1) <= 1 / audio.getframerate()
             paths.add(src)
-assert len(paths) == data["counts"]["audioFiles"] == 56
+assert len(paths) == data["counts"]["audioFiles"] == 28
 assert {p.relative_to(ROOT).as_posix() for p in (ROOT / "assets/audio").rglob("*.wav")} == paths
 
 class PageCheck(HTMLParser):
@@ -78,5 +76,5 @@ assert 'class="hero-facts"' not in html
 assert re.search(r'href="styles\.css\?v=', html) and re.search(r'src="app\.js\?v=', html)
 assert (ROOT / "assets/method-overview.svg").is_file()
 size = sum((ROOT / p).stat().st_size for p in paths)
-print(f"PASS: 14 curated listening pairs, 56 byte-verified WAV files ({size / 1048576:.2f} MiB).")
+print(f"PASS: 14 curated listening pairs, 28 byte-verified WAV files ({size / 1048576:.2f} MiB).")
 print("PASS: durations, model/method coverage, native transcripts, local links, English interface, and public-file hygiene.")
