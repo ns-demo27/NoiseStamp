@@ -8,8 +8,8 @@
   <meta name="referrer" content="no-referrer">
   <title>NoiseStamp — Audio demonstration</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=layout-20261118-2">
+  <script src="app.js?v=layout-20261118-2" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -20,7 +20,7 @@
         <a href="#listen">Listen</a>
         <a href="#method">How it works</a>
         <a href="#results">Results</a>
-        <a class="nav-source" href="https://github.com/ns-demo27/NoiseStamp" target="_blank" rel="noopener noreferrer">Demo source <span aria-hidden="true">↗</span></a>
+        <a class="nav-source" href="https://github.com/ns-demo27/NoiseStamp" target="_blank" rel="noopener noreferrer">Demo source</a>
       </nav>
     </div>
   </header>
@@ -28,31 +28,22 @@
   <main id="main">
     <section class="hero section-shell" id="top" aria-labelledby="paper-title">
       <div class="hero-copy">
-        <p class="submission-note"><span class="status-dot" aria-hidden="true"></span>Research audio demonstration</p>
         <h1 id="paper-title">NoiseStamp</h1>
         <p class="paper-subtitle">Training-Free Multi-Bit Watermarking for Streaming Text-to-Speech via Noise-Space Embedding</p>
         <p class="hero-description">Embed a message in the initial noise. Generate speech through the existing TTS sampler. Recover the message from a short recording.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#listen">Explore audio examples</a>
         </div>
-        <dl class="hero-facts" aria-label="Evaluation scope">
-          <div><dt>32-bit</dt><dd>message payload</dd></div>
-          <div><dt>1 second</dt><dd>short-audio recovery</dd></div>
-          <div><dt>4 models</dt><dd>evaluated TTS hosts</dd></div>
-        </dl>
       </div>
       <figure class="overview-figure">
-        <a href="assets/method-overview.svg" target="_blank" rel="noopener noreferrer" aria-label="View the NoiseStamp method overview at full size">
-          <img src="assets/method-overview.svg" width="715" height="294" alt="NoiseStamp workflow: encode the message in initial-noise signs, generate streaming speech through the TTS host, and recover the message from short audio through inversion and error-tolerant decoding.">
-        </a>
-        <figcaption>Initial-noise embedding, streaming TTS generation, and short-audio message decoding. <a href="assets/method-overview.svg" target="_blank" rel="noopener noreferrer">View full size</a></figcaption>
+        <img src="assets/method-overview.svg" width="715" height="294" alt="NoiseStamp workflow: encode the message in initial-noise signs, generate streaming speech through the TTS host, and recover the message from short audio through inversion and error-tolerant decoding.">
       </figure>
     </section>
 
     <section class="listening-section section-shell" id="listen" aria-labelledby="listen-title">
       <div class="section-intro">
-        <div><p class="section-context">Selected listening examples</p><h2 id="listen-title">One method.<br>Four speech models.</h2></div>
-        <p>Listen to NoiseStamp across the four evaluated TTS hosts. Choose English or Chinese, then compare each watermarked output with its unwatermarked reference as a full recording or a one-second excerpt.</p>
+        <div><h2 id="listen-title">Audio examples</h2></div>
+        <p>Selected unwatermarked and NoiseStamp recordings across four TTS models. Choose the language and clip length below.</p>
       </div>
       <div class="listening-controls">
         <form class="filter-bar" id="filters" aria-label="NoiseStamp recording length">

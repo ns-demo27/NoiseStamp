@@ -74,6 +74,8 @@ assert not re.search(r"[\u4e00-\u9fff]", html), "Interface copy must be English"
 assert 'audio.preload = "none"' in (ROOT / "app.js").read_text(encoding="utf-8")
 assert html.index('id="listen"') < html.index('id="compare"') < html.index('id="method"') < html.index('id="results"')
 assert 'id="preview-' not in html and 'renderPreview' not in (ROOT / "app.js").read_text(encoding="utf-8")
+assert 'class="hero-facts"' not in html
+assert re.search(r'href="styles\.css\?v=', html) and re.search(r'src="app\.js\?v=', html)
 assert (ROOT / "assets/method-overview.svg").is_file()
 size = sum((ROOT / p).stat().st_size for p in paths)
 print(f"PASS: 14 curated listening pairs, 56 byte-verified WAV files ({size / 1048576:.2f} MiB).")
