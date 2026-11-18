@@ -12,13 +12,12 @@
   };
   const durationText = (seconds) => `${seconds.toFixed(seconds === 1 ? 0 : 2)} s`;
 
-  function audioCell(asset, label, context, compact = false) {
-    const cell = make("div", compact ? "preview-audio" : "audio-cell");
-    const heading = make("div", compact ? "player-label" : "audio-type", label);
-    if (compact) heading.append(make("span", "player-meta", `${durationText(asset.duration)} / ${asset.sampleRate / 1000} kHz`));
+  function audioCell(asset, label, context) {
+    const cell = make("div", "audio-cell");
+    const heading = make("div", "audio-type", label);
     const audio = document.createElement("audio");
     audio.controls = true;
-    audio.preload = compact ? "metadata" : "none";
+    audio.preload = "none";
     audio.src = asset.src;
     audio.setAttribute("aria-label", `${context}, ${label}, ${durationText(asset.duration)}`);
     const fallback = make("a", "", "Download this recording");
@@ -31,7 +30,7 @@
     error.append(document.createTextNode(" "), download);
     audio.addEventListener("error", () => { error.hidden = false; });
     cell.append(heading, audio);
-    if (!compact) cell.append(make("p", "audio-caption", `${durationText(asset.duration)} / ${asset.sampleRate / 1000} kHz / mono`));
+    cell.append(make("p", "audio-caption", `${durationText(asset.duration)} / ${asset.sampleRate / 1000} kHz / mono`));
     cell.append(error);
     return cell;
   }
@@ -83,13 +82,6 @@
     target.setAttribute("aria-busy", "false");
   }
 
-  function renderPreview() {
-    const sample = data.preview[0];
-    byId("preview-reference").replaceChildren(audioCell(sample.reference.excerpt, "Unwatermarked reference", "F5-TTS preview", true));
-    byId("preview-watermarked").replaceChildren(audioCell(sample.watermarked.excerpt, "NoiseStamp output", "F5-TTS preview", true));
-    byId("preview-transcript").textContent = sample.transcript;
-  }
-
   function stopAudio() {
     document.querySelectorAll("audio").forEach((audio) => audio.pause());
   }
@@ -126,7 +118,6 @@
       const response = await fetch("data/samples.json");
       if (!response.ok) throw new Error(`Audio index returned ${response.status}`);
       data = await response.json();
-      renderPreview();
       renderModels();
       renderBaselines();
     } catch (error) {

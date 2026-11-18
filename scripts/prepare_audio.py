@@ -39,7 +39,7 @@ def build(source, destination):
         group = CATEGORIES[category]
         counters[key[:4]] += 1
         number = counters[key[:4]]
-        if group == "caseStudies":
+        if group != "listening":
             continue
         selected_number = 2 if language == "zh" and model in {"CosyVoice3", "VoxCPM2"} else 1
         if group == "listening" and (number != selected_number or not (method == "NoiseStamp" or (model == "IndexTTS2" and language == "en"))):
@@ -86,9 +86,9 @@ def build(source, destination):
     for group in ("listening", "preview"):
         manifest[group].sort(key=lambda sample: (MODELS.index(sample["model"]), METHODS.index(sample["method"]), sample["language"], sample["example"]))
     assert len(manifest["listening"]) == 14
-    assert len(manifest["preview"]) == 1
-    assert len(exported) == 58
-    manifest["counts"] = {"listeningPairs": 14, "previewPairs": 1, "audioFiles": len(exported)}
+    assert len(manifest["preview"]) == 0
+    assert len(exported) == 56
+    manifest["counts"] = {"listeningPairs": 14, "previewPairs": 0, "audioFiles": len(exported)}
     output = destination / "data/samples.json"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

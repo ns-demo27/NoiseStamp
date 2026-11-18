@@ -11,7 +11,7 @@ import wave
 ROOT = Path(__file__).resolve().parents[1]
 data = json.loads((ROOT / "data/samples.json").read_text(encoding="utf-8"))
 assert len(data["listening"]) == 14
-assert len(data["preview"]) == 1
+assert len(data["preview"]) == 0
 assert Counter(p["language"] for p in data["listening"]) == {"en": 10, "zh": 4}
 for model in data["models"]:
     for language in ("en", "zh"):
@@ -38,7 +38,7 @@ for pair in data["listening"] + data["preview"]:
                 if length == "excerpt":
                     assert abs(duration - 1) <= 1 / audio.getframerate()
             paths.add(src)
-assert len(paths) == data["counts"]["audioFiles"] == 58
+assert len(paths) == data["counts"]["audioFiles"] == 56
 assert {p.relative_to(ROOT).as_posix() for p in (ROOT / "assets/audio").rglob("*.wav")} == paths
 
 class PageCheck(HTMLParser):
@@ -71,7 +71,10 @@ for filename in ("index.html", "styles.css", "app.js", "data/samples.json", "REA
     text = (ROOT / filename).read_text(encoding="utf-8")
     assert not re.search(r"BackdoorLALM|anonsubmission2027|Haiyun|haiyun|D:\\\\|C:\\\\|google-analytics|googletagmanager|fonts.googleapis", text), filename
 assert not re.search(r"[\u4e00-\u9fff]", html), "Interface copy must be English"
-assert 'audio.preload = compact ? "metadata" : "none"' in (ROOT / "app.js").read_text(encoding="utf-8")
+assert 'audio.preload = "none"' in (ROOT / "app.js").read_text(encoding="utf-8")
+assert html.index('id="listen"') < html.index('id="compare"') < html.index('id="method"') < html.index('id="results"')
+assert 'id="preview-' not in html and 'renderPreview' not in (ROOT / "app.js").read_text(encoding="utf-8")
+assert (ROOT / "assets/method-overview.svg").is_file()
 size = sum((ROOT / p).stat().st_size for p in paths)
-print(f"PASS: 14 curated listening pairs + 1 preview pair, 58 byte-verified WAV files ({size / 1048576:.2f} MiB).")
+print(f"PASS: 14 curated listening pairs, 56 byte-verified WAV files ({size / 1048576:.2f} MiB).")
 print("PASS: durations, model/method coverage, native transcripts, local links, English interface, and public-file hygiene.")

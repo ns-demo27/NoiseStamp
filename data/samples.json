@@ -521,35 +521,10 @@
       }
     }
   ],
-  "preview": [
-    {
-      "id": "preview-f5-tts-noisestamp-en-01",
-      "model": "F5-TTS",
-      "method": "NoiseStamp",
-      "language": "en",
-      "example": 1,
-      "transcript": "It supports TSIG authenticated messages and EDNS0.",
-      "reference": {
-        "excerpt": {
-          "src": "assets/audio/preview/f5-tts/noisestamp/en/01/reference-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "0fa027342a3e45b639a9771dba3a82488cee5a6edef686d83ad2b7b0448476d6"
-        }
-      },
-      "watermarked": {
-        "excerpt": {
-          "src": "assets/audio/preview/f5-tts/noisestamp/en/01/watermarked-excerpt.wav",
-          "duration": 1.0,
-          "sampleRate": 24000,
-          "sha256": "8c6b70aa38753c16d2fd7824134262070c3b064dcfd9bb71c96be07cb825a5cb"
-        }
-      }
-    }
-  ],
+  "preview": [],
   "counts": {
     "listeningPairs": 14,
-    "previewPairs": 1,
-    "audioFiles": 58
+    "previewPairs": 0,
+    "audioFiles": 56
   }
 }
